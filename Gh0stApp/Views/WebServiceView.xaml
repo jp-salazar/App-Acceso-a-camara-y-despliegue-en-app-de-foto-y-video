@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"            
+             mc:Ignorable="d"
+             Title="clima, giphy"
+             x:Class="Gh0stApp.Views.WebServiceView">
+
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Grid Margin="20,35,20,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*" />
+                    <ColumnDefinition Width="0.6*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+                <Entry x:Name="cityEntry"
+               Grid.ColumnSpan="2"
+               Text="Quito" />
+                <Button Grid.ColumnSpan="2"
+                Grid.Row="1"
+                Text="Go"
+                Clicked="btnConsumir_Clicked" />
+                <Label Grid.Row="2"
+               Text="Unicacion:" />
+                <Label Grid.Row="2"
+               Grid.Column="1"
+               Text="{Binding Sys.Country}" />
+                <Label Grid.Row="3"
+               Text="Temperatura:" />
+                <Label Grid.Row="3"
+               Grid.Column="1"
+               Text="{Binding Main.Temp}" />
+                <Label Grid.Row="4"
+               Text="velocidad del viento:" />
+                <Label Grid.Row="4"
+               Grid.Column="1"
+               Text="{Binding Wind.Speed}" />
+                <Label Grid.Row="5"
+               Text="Humedad:" />
+                <Label Grid.Row="5"
+               Grid.Column="1"
+               Text="{Binding Main.Humidity}" />
+                <Label Grid.Row="6"
+               Text="Visibilidad:" />
+                <Label Grid.Row="6"
+               Grid.Column="1"
+               Text="{Binding Weather[0].Description}" />
+            </Grid>
+            <Image x:Name="imgVWR" Source="URL" IsAnimationPlaying="True" WidthRequest="250" HeightRequest="250"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

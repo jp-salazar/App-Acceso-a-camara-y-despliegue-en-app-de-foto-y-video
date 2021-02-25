@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Gh0stApp.ViewModels"
+             mc:Ignorable="d"
+             Title="Fotos"
+             x:Class="Gh0stApp.Views.FotoView">
+    <ContentPage.BindingContext>
+        <vm:FotoViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Image Source="{Binding Foto}" WidthRequest="300" HeightRequest="300" Aspect="AspectFit" />
+            <Button Text="Capturar foto" Command="{Binding TakePhotoCommand}"  />
+            <Button Text="Elegir foto" Command="{Binding ChoosePhotoCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
